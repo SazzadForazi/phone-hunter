@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+  }
+  body{
+      background-color: rgba(0, 128, 0, 0.11)
+  }
+  /* Style the search field */
+  div.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  div.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  div.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  div.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  img{
+      height: 300px;
+      width: 150px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+
+  }
+  .card{
+      background-color: #a3da0b13;
+      height: 550px;
+  }
