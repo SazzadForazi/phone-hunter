@@ -54,8 +54,12 @@ const showdetails = item => {
     div.innerHTML = `
     <img class="card-img-top" src="${item.image}"alt="Card image cap">
         <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+        <p class="card-text">Brand:"${item.brand}"</p>
+            <p class="card-text">ReleaseDate:"${item.releaseDate}"</p>
+            <p class="card-text">DisplaySize:"${item.mainFeatures.displaySize}"</p>
+            <p class="card-text">Memory:"${item.mainFeatures.memory}"</p>
+            <p class="card-text">ChipSet:"${item.mainFeatures.chipSet}"</p>
+            <p class="card-text">Sensors:"${item.mainFeatures.sensors}"</p>
         </div>
     `;
     details.appendChild(div)

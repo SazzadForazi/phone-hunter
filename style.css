@@ -48,6 +48,11 @@
 
   }
   .card{
+      /* margin-top: 75px;
+      margin-bottom: 150px; */
       background-color: #a3da0b13;
-      height: 650px;
   }
+.card-body{
+   font-size: smaller;
+    
+}
