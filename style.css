@@ -2,6 +2,7 @@
     box-sizing: border-box;
   }
   body{
+      
       background-color: rgba(0, 128, 0, 0.11)
   }
   /* Style the search field */
@@ -38,8 +39,8 @@
     display: table;
   }
   img{
-      height: 300px;
-      width: 150px;
+      height: 400px;
+      /* width: 50px; */
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -48,5 +49,5 @@
   }
   .card{
       background-color: #a3da0b13;
-      height: 550px;
+      height: 650px;
   }
