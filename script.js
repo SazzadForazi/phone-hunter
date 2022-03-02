@@ -5,6 +5,7 @@ function ClickBtn() {
     searchInput.value = '';
 
     if (searchValue == '') {
+        // error.textContent = '';
         const error = document.getElementById('error');
         return error.innerText = "Please try to valid Input";
 
@@ -17,14 +18,28 @@ function ClickBtn() {
         // console.log(url);
         fetch(url)
             .then(res => res.json())
-            .then(data => showallMobile(data.data));
+            .then(data => {
+
+                if (data.data.length == 0) {
+                    const found = document.getElementById('notfound');
+                    found.innerText = "Not Found";
+
+                } else {
+
+                    showallMobile(data.data)
+                }
+                found.textContent = '';
+            });
+        // found.textContent = '';
     }
     error.textContent = '';
+
 
 
 }
 
 showallMobile = (items) => {
+
     const searchResult = document.getElementById('mobilecard');
     searchResult.textContent = '';
     for (const item of items.slice(0, 20)) {
@@ -46,7 +61,9 @@ showallMobile = (items) => {
         `;
         // console.log(item.slug);
         searchResult.appendChild(newDiv)
+
     }
+
 }
 
 const loadMealDetails = id => {
@@ -60,7 +77,7 @@ const loadMealDetails = id => {
 
 const showdetails = item => {
 
-    // console.log(item);
+    console.log(item);
     const details = document.getElementById('showdetails');
     const div = document.createElement('div');
 
@@ -75,6 +92,15 @@ const showdetails = item => {
             <p class="card-text">Memory: ${item.mainFeatures.memory}</p>
             <p class="card-text">ChipSet: ${item.mainFeatures.chipSet}</p>
             <p class="card-text">Sensors: ${item.mainFeatures.sensors}</p>
+            <p class="card-text">Others: 
+                                         <ul>
+                                         <li>GPS: ${item.others.GPS}</li>
+                                         <li>NFC: ${item.others.NFC}</li>
+                                         <li>Radio: ${item.others.Radio}</li>
+                                         <li>USB: ${item.others.USB}</li>
+                                         <li>WLAN: ${item.others.WLAN}</li>
+                                         </ul>
+                                 </p>
         </div>
     `;
 
